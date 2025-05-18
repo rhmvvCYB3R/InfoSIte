@@ -1,0 +1,158 @@
+/* Базовые стили и фон */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: backgroundMove 20s ease infinite;
+  z-index: 0;
+  filter: blur(4px);
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeInUp 2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00e0ff;
+  animation: glowTitle 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowTitle {
+  from { text-shadow: 0 0 10px #00f7ff; }
+  to { text-shadow: 0 0 25px #00f7ff, 0 0 50px #00f7ff; }
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #00ffe7;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffe7;
+}
+
+.insta-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 12px 30px;
+  border: 2px solid #00ffe7;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #00ffe7;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0,255,231,0.3);
+}
+
+.insta-btn:hover {
+  background: #00ffe7;
+  color: #000;
+  box-shadow: 0 0 20px #00ffe7, 0 0 40px #00ffe7;
+}
+
+/* Терминал */
+.terminal {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #111;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 0.8rem;
+  padding: 10px;
+  border: 1px solid #00ff00;
+  border-radius: 5px;
+  max-width: 360px;
+  z-index: 5;
+  opacity: 0.85;
+}
+
+/* Иконки */
+.icon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.9;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.top-right {
+  top: 15px;
+  right: 15px;
+}
+
+.bottom-left {
+  bottom: 15px;
+  left: 15px;
+}
+
+.bottom-right {
+  bottom: 15px;
+  right: 15px;
+}
